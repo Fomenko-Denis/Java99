@@ -3,6 +3,43 @@ import org.junit.jupiter.api.Test;
 import ru.netology.Radio;
 
 public class RadioTest {
+
+    @Test
+    public void orWave() {
+        Radio radio = new Radio(20);
+        radio.setCurrentWave(18);
+        int actual = radio.getCurrentWave();
+        int expected = 18;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void maxWave() {
+        Radio radio = new Radio(20);
+        radio.setCurrentWave(19);
+        int actual = radio.getCurrentWave();
+        int expected = 19;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void aboveMaxWave() {
+        Radio radio = new Radio(20);
+        radio.setCurrentWave(20);
+        int actual = radio.getCurrentWave();
+        int expected = 0;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void aboeMaxWave() {
+        Radio radio = new Radio(20);
+        radio.setCurrentWave(21);
+        int actual = radio.getCurrentWave();
+        int expected = 0;
+        Assertions.assertEquals(expected, actual);
+    }
+
     @Test
     public void testWave() {
         Radio radio = new Radio();

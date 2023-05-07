@@ -3,9 +3,18 @@ package ru.netology;
 public class Radio {
     private int currentWave;
     private int currentVolume;
+    private int maxWave;
+
+    public Radio() {
+        this.maxWave = 9;
+    }
+
+    public Radio(int wavesCount) {
+        this.maxWave = wavesCount - 1;
+    }
 
     public void next() {
-        if (currentWave != 9) {
+        if (currentWave != maxWave) {
             currentWave++;
         } else {
             currentWave = 0;
@@ -16,7 +25,7 @@ public class Radio {
         if (currentWave != 0) {
             currentWave--;
         } else {
-            currentWave = 9;
+            currentWave = maxWave;
         }
     }
 
@@ -41,7 +50,7 @@ public class Radio {
         if (currentWave < 0) {
             return;
         }
-        if (currentWave > 9) {
+        if (currentWave > maxWave) {
             return;
         }
         this.currentWave = currentWave;
